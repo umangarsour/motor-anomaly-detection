@@ -1,0 +1,6 @@
+Metric,Value
+Total Samples,100000.0
+Normal,95261.0
+Anomalies,4739.0
+Anomaly Percentage,4.74
+Test-cycle Anomaly Percentage,3.7

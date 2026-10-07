@@ -1,0 +1,122 @@
+{
+  "method": "Bayes-optimal rule: generator label logic + Monte Carlo over its N(0,5.0) score noise (400 draws/row). Uses all 28 features (incl. latent ones).",
+  "expected_bayes_accuracy_all": 0.839805975,
+  "noise_free_rule_matches_label": 0.83793,
+  "bayes_rule_vs_labels_test_cycle": {
+    "accuracy": 0.8369,
+    "balanced_accuracy": 0.5248282375704001,
+    "precision_macro": 0.6197447483465586,
+    "recall_macro": 0.5248282375704001,
+    "f1_macro": 0.5379242071573695,
+    "f1_weighted": 0.830396002400848,
+    "per_class": {
+      "Bearing_Wear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 44
+      },
+      "Electrical_Fault": {
+        "precision": 0.7833873118689274,
+        "recall": 0.8305392849929307,
+        "f1": 0.8062745098039216,
+        "support": 4951
+      },
+      "Misalignment": {
+        "precision": 0.5,
+        "recall": 0.04918032786885246,
+        "f1": 0.08955223880597014,
+        "support": 61
+      },
+      "Multi_Fault": {
+        "precision": 0.7685478757133798,
+        "recall": 0.7989452867501649,
+        "f1": 0.7834518422753717,
+        "support": 1517
+      },
+      "Normal": {
+        "precision": 0.8976964769647696,
+        "recall": 0.8615084525357607,
+        "f1": 0.8792302587923025,
+        "support": 4614
+      },
+      "Overheating": {
+        "precision": 0.5256410256410257,
+        "recall": 0.23871906841339155,
+        "f1": 0.3283283283283283,
+        "support": 687
+      },
+      "Overload": {
+        "precision": 0.8629405482378071,
+        "recall": 0.8949052424317007,
+        "f1": 0.8786322720956926,
+        "support": 8126
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        33,
+        1,
+        2,
+        0,
+        2,
+        6
+      ],
+      [
+        1,
+        4112,
+        1,
+        282,
+        54,
+        72,
+        429
+      ],
+      [
+        0,
+        33,
+        3,
+        0,
+        7,
+        4,
+        14
+      ],
+      [
+        0,
+        203,
+        0,
+        1212,
+        0,
+        25,
+        77
+      ],
+      [
+        0,
+        110,
+        1,
+        0,
+        3975,
+        10,
+        518
+      ],
+      [
+        0,
+        348,
+        0,
+        43,
+        21,
+        164,
+        111
+      ],
+      [
+        0,
+        410,
+        0,
+        38,
+        371,
+        35,
+        7272
+      ]
+    ]
+  }
+}

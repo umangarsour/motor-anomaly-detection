@@ -1,0 +1,23 @@
+# Environments
+venv/
+.venv/
+
+# Caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Generated data: rebuild with `python -m src.pipeline` (the generator is deterministic, seed 42)
+data/raw/
+data/processed/*.csv
+data/results/
+
+# Pre-refactor artifacts kept locally for the baseline comparison (678 MB model)
+models/legacy/
+reports/legacy/

@@ -1,0 +1,259 @@
+{
+  "cv": "GroupKFold(4) on cycle_id, training cycles only, RF(200 trees, legacy params)",
+  "results": {
+    "A_all_28": {
+      "n_features": 28,
+      "accuracy": {
+        "mean": 0.8217749999999999,
+        "std": 0.002643506194431938
+      },
+      "balanced_accuracy": {
+        "mean": 0.578469161210808,
+        "std": 0.00736037355742694
+      },
+      "f1_macro": {
+        "mean": 0.5641855068873366,
+        "std": 0.004927820307002133
+      },
+      "f1_weighted": {
+        "mean": 0.8227303808029895,
+        "std": 0.0027891517112693183
+      },
+      "seconds": 90.86825000005774
+    },
+    "B_minus_health_score": {
+      "n_features": 27,
+      "accuracy": {
+        "mean": 0.8206375,
+        "std": 0.00328849794739177
+      },
+      "balanced_accuracy": {
+        "mean": 0.580673083066148,
+        "std": 0.009215415725959712
+      },
+      "f1_macro": {
+        "mean": 0.5651611249746853,
+        "std": 0.00894895200744275
+      },
+      "f1_weighted": {
+        "mean": 0.8218826815681213,
+        "std": 0.0034476828428330556
+      },
+      "seconds": 89.47489459998906
+    },
+    "C_minus_degradation_indices": {
+      "n_features": 24,
+      "accuracy": {
+        "mean": 0.809925,
+        "std": 0.0021489823172841775
+      },
+      "balanced_accuracy": {
+        "mean": 0.5489260783473043,
+        "std": 0.007631387462316767
+      },
+      "f1_macro": {
+        "mean": 0.5373325411275165,
+        "std": 0.008053587390655707
+      },
+      "f1_weighted": {
+        "mean": 0.810695265586142,
+        "std": 0.002460798160574414
+      },
+      "seconds": 75.44283920002636
+    },
+    "D_sensors_only (minus all 5 latent)": {
+      "n_features": 23,
+      "accuracy": {
+        "mean": 0.8053499999999999,
+        "std": 0.001219631091765032
+      },
+      "balanced_accuracy": {
+        "mean": 0.542709281447808,
+        "std": 0.007846350360080807
+      },
+      "f1_macro": {
+        "mean": 0.5306433470159941,
+        "std": 0.0061761266694298055
+      },
+      "f1_weighted": {
+        "mean": 0.8059881086988017,
+        "std": 0.0014705104437466798
+      },
+      "seconds": 77.98038790002465
+    },
+    "E_D_minus_maintenance_quality": {
+      "n_features": 22,
+      "accuracy": {
+        "mean": 0.8051125,
+        "std": 0.0021781227582485115
+      },
+      "balanced_accuracy": {
+        "mean": 0.5403893186034505,
+        "std": 0.010712921493411371
+      },
+      "f1_macro": {
+        "mean": 0.5280629052732881,
+        "std": 0.010830952073738142
+      },
+      "f1_weighted": {
+        "mean": 0.8060159516740646,
+        "std": 0.002471547358298448
+      },
+      "seconds": 76.99141719995532
+    },
+    "F_D_minus_acoustic_anomaly_score": {
+      "n_features": 22,
+      "accuracy": {
+        "mean": 0.8054250000000001,
+        "std": 0.002117339132023967
+      },
+      "balanced_accuracy": {
+        "mean": 0.5450817790467145,
+        "std": 0.009389617442304588
+      },
+      "f1_macro": {
+        "mean": 0.5324445120157595,
+        "std": 0.00862873720791173
+      },
+      "f1_weighted": {
+        "mean": 0.8065709556811856,
+        "std": 0.002443899969683767
+      },
+      "seconds": 77.58322070003487
+    },
+    "G_D_minus_misalignment_imbalance": {
+      "n_features": 21,
+      "accuracy": {
+        "mean": 0.8053625,
+        "std": 0.0015469223477602159
+      },
+      "balanced_accuracy": {
+        "mean": 0.5359162552514688,
+        "std": 0.006654996463205797
+      },
+      "f1_macro": {
+        "mean": 0.5217327188333853,
+        "std": 0.0059881712186482024
+      },
+      "f1_weighted": {
+        "mean": 0.8066251760416984,
+        "std": 0.0017727288499777168
+      },
+      "seconds": 70.84776420006528
+    },
+    "A_minus_bearing_wear_index": {
+      "n_features": 27,
+      "accuracy": {
+        "mean": 0.821225,
+        "std": 0.0032673574949797094
+      },
+      "balanced_accuracy": {
+        "mean": 0.5738284046955857,
+        "std": 0.013302343643664723
+      },
+      "f1_macro": {
+        "mean": 0.5589593702913449,
+        "std": 0.011324831470183887
+      },
+      "f1_weighted": {
+        "mean": 0.8222356294565174,
+        "std": 0.0034495245168205233
+      },
+      "seconds": 93.56091420003213
+    },
+    "A_minus_thermal_stress_index": {
+      "n_features": 27,
+      "accuracy": {
+        "mean": 0.8146625000000001,
+        "std": 0.0027819451378486644
+      },
+      "balanced_accuracy": {
+        "mean": 0.5661499926355859,
+        "std": 0.009901131537738587
+      },
+      "f1_macro": {
+        "mean": 0.5505050411718059,
+        "std": 0.007934303441500243
+      },
+      "f1_weighted": {
+        "mean": 0.8163681199400021,
+        "std": 0.0032369765158214835
+      },
+      "seconds": 98.05500769999344
+    },
+    "A_minus_electrical_stress_index": {
+      "n_features": 27,
+      "accuracy": {
+        "mean": 0.8169,
+        "std": 0.002855477193044957
+      },
+      "balanced_accuracy": {
+        "mean": 0.5694806676846615,
+        "std": 0.004672491363161115
+      },
+      "f1_macro": {
+        "mean": 0.5551590337091419,
+        "std": 0.005050127646793806
+      },
+      "f1_weighted": {
+        "mean": 0.817664089396177,
+        "std": 0.002959962744483655
+      },
+      "seconds": 100.14625210000668
+    },
+    "A_minus_lubrication_index": {
+      "n_features": 27,
+      "accuracy": {
+        "mean": 0.8206874999999999,
+        "std": 0.0030633672241505592
+      },
+      "balanced_accuracy": {
+        "mean": 0.5787864667672492,
+        "std": 0.005918684895025329
+      },
+      "f1_macro": {
+        "mean": 0.5637109213445186,
+        "std": 0.0049456819664882
+      },
+      "f1_weighted": {
+        "mean": 0.8218623149895865,
+        "std": 0.0030408491024813953
+      },
+      "seconds": 74.1809907000279
+    },
+    "A_minus_health_score": {
+      "n_features": 27,
+      "accuracy": {
+        "mean": 0.8206375,
+        "std": 0.00328849794739177
+      },
+      "balanced_accuracy": {
+        "mean": 0.580673083066148,
+        "std": 0.009215415725959712
+      },
+      "f1_macro": {
+        "mean": 0.5651611249746853,
+        "std": 0.00894895200744275
+      },
+      "f1_weighted": {
+        "mean": 0.8218826815681213,
+        "std": 0.0034476828428330556
+      },
+      "seconds": 101.28025019995403
+    }
+  },
+  "latent_reconstructable_from_sensors_r2": {
+    "bearing_wear_index": 0.9852452360651873,
+    "thermal_stress_index": 0.9792757870105492,
+    "electrical_stress_index": 0.9809059827430109,
+    "lubrication_index": 0.9728452355441607,
+    "health_score": 0.9728266941921456
+  },
+  "max_abs_corr_latent_vs_sensor": {
+    "bearing_wear_index": 0.9580104326348098,
+    "thermal_stress_index": 0.9478518175381775,
+    "electrical_stress_index": 0.9535703145695502,
+    "lubrication_index": 0.949339866680385,
+    "health_score": 0.9536217020060004
+  }
+}

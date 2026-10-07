@@ -1,0 +1,504 @@
+{
+  "importance": [
+    {
+      "feature": "electrical_stress_index",
+      "mdi": 0.16782738906743608,
+      "perm_f1_macro_mean": 0.1058800642587578,
+      "perm_f1_macro_std": 0.0030059877480417127
+    },
+    {
+      "feature": "load_percentage",
+      "mdi": 0.07380402627267531,
+      "perm_f1_macro_mean": 0.06340521527989999,
+      "perm_f1_macro_std": 0.0059488298745341344
+    },
+    {
+      "feature": "thermal_stress_index",
+      "mdi": 0.11556820249169951,
+      "perm_f1_macro_mean": 0.05281785673208685,
+      "perm_f1_macro_std": 0.002445172781594819
+    },
+    {
+      "feature": "current",
+      "mdi": 0.07247412184171609,
+      "perm_f1_macro_mean": 0.03246515196559798,
+      "perm_f1_macro_std": 0.004548631698231641
+    },
+    {
+      "feature": "motor_temperature",
+      "mdi": 0.049667657206738706,
+      "perm_f1_macro_mean": 0.028591955795503398,
+      "perm_f1_macro_std": 0.005317127186432711
+    },
+    {
+      "feature": "vibration_rms",
+      "mdi": 0.03952053057149794,
+      "perm_f1_macro_mean": 0.023276150393799468,
+      "perm_f1_macro_std": 0.0015722630770087604
+    },
+    {
+      "feature": "power_factor",
+      "mdi": 0.037727724263365923,
+      "perm_f1_macro_mean": 0.02222224865608613,
+      "perm_f1_macro_std": 0.0009946918487849957
+    },
+    {
+      "feature": "misalignment_index",
+      "mdi": 0.03189365559059613,
+      "perm_f1_macro_mean": 0.017948827097558562,
+      "perm_f1_macro_std": 0.0015930398770869713
+    },
+    {
+      "feature": "spectral_energy",
+      "mdi": 0.01578323680884941,
+      "perm_f1_macro_mean": 0.01295295392142497,
+      "perm_f1_macro_std": 0.003290571405763532
+    },
+    {
+      "feature": "bearing_wear_index",
+      "mdi": 0.08936725751737234,
+      "perm_f1_macro_mean": 0.009813910713729945,
+      "perm_f1_macro_std": 0.0063604063442624275
+    },
+    {
+      "feature": "kurtosis",
+      "mdi": 0.013379320982102448,
+      "perm_f1_macro_mean": 0.00834068458645718,
+      "perm_f1_macro_std": 0.0016229281005156065
+    },
+    {
+      "feature": "bearing_temperature",
+      "mdi": 0.04216029203393993,
+      "perm_f1_macro_mean": 0.0069944195799856775,
+      "perm_f1_macro_std": 0.003919195789033093
+    },
+    {
+      "feature": "active_power",
+      "mdi": 0.039520037162815255,
+      "perm_f1_macro_mean": 0.006452824049541084,
+      "perm_f1_macro_std": 0.0033418475721141722
+    },
+    {
+      "feature": "ambient_temperature",
+      "mdi": 0.012992969202165973,
+      "perm_f1_macro_mean": 0.005868941861341281,
+      "perm_f1_macro_std": 0.0010948877145830422
+    },
+    {
+      "feature": "dominant_frequency",
+      "mdi": 0.013606853594650572,
+      "perm_f1_macro_mean": 0.00576176100932646,
+      "perm_f1_macro_std": 0.0013564222459332928
+    },
+    {
+      "feature": "maintenance_quality",
+      "mdi": 0.016032626218281734,
+      "perm_f1_macro_mean": 0.005563666645042753,
+      "perm_f1_macro_std": 0.0022712136175898397
+    },
+    {
+      "feature": "sound_level_db",
+      "mdi": 0.009001332700844059,
+      "perm_f1_macro_mean": 0.005367109477474763,
+      "perm_f1_macro_std": 0.001992050864309242
+    },
+    {
+      "feature": "acoustic_anomaly_score",
+      "mdi": 0.009310296198550927,
+      "perm_f1_macro_mean": 0.005350612114531606,
+      "perm_f1_macro_std": 0.0007912607880132666
+    },
+    {
+      "feature": "crest_factor",
+      "mdi": 0.010715377067182025,
+      "perm_f1_macro_mean": 0.005263644720626548,
+      "perm_f1_macro_std": 0.0021709677697575747
+    },
+    {
+      "feature": "rpm",
+      "mdi": 0.010555749368032132,
+      "perm_f1_macro_mean": 0.004570000093047177,
+      "perm_f1_macro_std": 0.0015554576185543908
+    },
+    {
+      "feature": "vibration_amplitude",
+      "mdi": 0.030395065067243817,
+      "perm_f1_macro_mean": 0.004443233934422586,
+      "perm_f1_macro_std": 0.0035512472224629595
+    },
+    {
+      "feature": "voltage",
+      "mdi": 0.010351900084807736,
+      "perm_f1_macro_mean": 0.003869876269251016,
+      "perm_f1_macro_std": 0.002784019283942708
+    },
+    {
+      "feature": "imbalance_index",
+      "mdi": 0.009307935144819505,
+      "perm_f1_macro_mean": 0.003353357582341321,
+      "perm_f1_macro_std": 0.0009870803633047786
+    },
+    {
+      "feature": "vibration_peak",
+      "mdi": 0.007501935101643069,
+      "perm_f1_macro_mean": 0.0033104418450192073,
+      "perm_f1_macro_std": 0.0035292093547314232
+    },
+    {
+      "feature": "supply_voltage",
+      "mdi": 0.008269737561058749,
+      "perm_f1_macro_mean": 0.0031886310792552663,
+      "perm_f1_macro_std": 0.0023560389136346306
+    },
+    {
+      "feature": "efficiency_index",
+      "mdi": 0.010530952916856753,
+      "perm_f1_macro_mean": 0.0017942924420785156,
+      "perm_f1_macro_std": 0.0011488170211881134
+    },
+    {
+      "feature": "lubrication_index",
+      "mdi": 0.05273381796305796,
+      "perm_f1_macro_mean": -0.0012782153147422592,
+      "perm_f1_macro_std": 0.0014401379343411433
+    }
+  ],
+  "high_corr_pairs_gt_0.9": [
+    [
+      "current",
+      "active_power",
+      0.9396863021574132
+    ],
+    [
+      "power_factor",
+      "vibration_amplitude",
+      0.9071269108324344
+    ],
+    [
+      "power_factor",
+      "bearing_wear_index",
+      0.9087589500901784
+    ],
+    [
+      "power_factor",
+      "thermal_stress_index",
+      0.9071990522772668
+    ],
+    [
+      "power_factor",
+      "electrical_stress_index",
+      0.920601994022061
+    ],
+    [
+      "power_factor",
+      "lubrication_index",
+      0.9035891469230714
+    ],
+    [
+      "bearing_temperature",
+      "vibration_amplitude",
+      0.9104155047602533
+    ],
+    [
+      "bearing_temperature",
+      "bearing_wear_index",
+      0.9215538478733136
+    ],
+    [
+      "bearing_temperature",
+      "thermal_stress_index",
+      0.9140619365805629
+    ],
+    [
+      "imbalance_index",
+      "vibration_amplitude",
+      0.904618119193394
+    ],
+    [
+      "imbalance_index",
+      "bearing_wear_index",
+      0.9106185797426446
+    ],
+    [
+      "vibration_amplitude",
+      "kurtosis",
+      0.9248276330959753
+    ],
+    [
+      "vibration_amplitude",
+      "dominant_frequency",
+      0.9242475812054536
+    ],
+    [
+      "vibration_amplitude",
+      "bearing_wear_index",
+      0.9442719341461512
+    ],
+    [
+      "vibration_amplitude",
+      "thermal_stress_index",
+      0.9371961622871606
+    ],
+    [
+      "vibration_amplitude",
+      "electrical_stress_index",
+      0.9279055003466922
+    ],
+    [
+      "vibration_amplitude",
+      "lubrication_index",
+      0.9276037244010982
+    ],
+    [
+      "vibration_rms",
+      "spectral_energy",
+      0.9143045994873674
+    ],
+    [
+      "kurtosis",
+      "dominant_frequency",
+      0.9336708136146157
+    ],
+    [
+      "kurtosis",
+      "bearing_wear_index",
+      0.9563750864866799
+    ],
+    [
+      "kurtosis",
+      "thermal_stress_index",
+      0.9478518175381775
+    ],
+    [
+      "kurtosis",
+      "electrical_stress_index",
+      0.9535703145695502
+    ],
+    [
+      "kurtosis",
+      "lubrication_index",
+      0.949339866680385
+    ],
+    [
+      "dominant_frequency",
+      "bearing_wear_index",
+      0.9580104326348098
+    ],
+    [
+      "dominant_frequency",
+      "thermal_stress_index",
+      0.9421978709198748
+    ],
+    [
+      "dominant_frequency",
+      "electrical_stress_index",
+      0.9449056788817527
+    ],
+    [
+      "dominant_frequency",
+      "lubrication_index",
+      0.9461109175067488
+    ],
+    [
+      "bearing_wear_index",
+      "thermal_stress_index",
+      0.9728230759203025
+    ],
+    [
+      "bearing_wear_index",
+      "electrical_stress_index",
+      0.9792592557288101
+    ],
+    [
+      "bearing_wear_index",
+      "lubrication_index",
+      0.9819795292958408
+    ],
+    [
+      "thermal_stress_index",
+      "electrical_stress_index",
+      0.9801864918116764
+    ],
+    [
+      "thermal_stress_index",
+      "lubrication_index",
+      0.9736257251816294
+    ],
+    [
+      "electrical_stress_index",
+      "lubrication_index",
+      0.9823335407000432
+    ]
+  ],
+  "variants": {
+    "all": {
+      "features": [
+        "load_percentage",
+        "ambient_temperature",
+        "supply_voltage",
+        "maintenance_quality",
+        "rpm",
+        "current",
+        "voltage",
+        "active_power",
+        "power_factor",
+        "efficiency_index",
+        "motor_temperature",
+        "bearing_temperature",
+        "imbalance_index",
+        "misalignment_index",
+        "vibration_amplitude",
+        "vibration_rms",
+        "vibration_peak",
+        "crest_factor",
+        "kurtosis",
+        "sound_level_db",
+        "dominant_frequency",
+        "spectral_energy",
+        "acoustic_anomaly_score",
+        "bearing_wear_index",
+        "thermal_stress_index",
+        "electrical_stress_index",
+        "lubrication_index"
+      ],
+      "n": 27,
+      "accuracy": {
+        "mean": 0.8173625,
+        "std": 0.002983574827283517
+      },
+      "balanced_accuracy": {
+        "mean": 0.6048397181869547,
+        "std": 0.00786223997044146
+      },
+      "f1_macro": {
+        "mean": 0.5723522101040621,
+        "std": 0.006440902790491284
+      },
+      "f1_weighted": {
+        "mean": 0.8218879711335447,
+        "std": 0.0032633584724479896
+      },
+      "seconds": 60.592287600040436
+    },
+    "drop_nonpositive_permutation": {
+      "features": [
+        "load_percentage",
+        "ambient_temperature",
+        "supply_voltage",
+        "maintenance_quality",
+        "rpm",
+        "current",
+        "voltage",
+        "active_power",
+        "power_factor",
+        "efficiency_index",
+        "motor_temperature",
+        "bearing_temperature",
+        "imbalance_index",
+        "misalignment_index",
+        "vibration_amplitude",
+        "vibration_rms",
+        "vibration_peak",
+        "crest_factor",
+        "kurtosis",
+        "sound_level_db",
+        "dominant_frequency",
+        "spectral_energy",
+        "acoustic_anomaly_score",
+        "bearing_wear_index",
+        "thermal_stress_index",
+        "electrical_stress_index"
+      ],
+      "n": 26,
+      "accuracy": {
+        "mean": 0.8174125,
+        "std": 0.002914484302582546
+      },
+      "balanced_accuracy": {
+        "mean": 0.6068916405995117,
+        "std": 0.008742764626122718
+      },
+      "f1_macro": {
+        "mean": 0.5743555205433468,
+        "std": 0.006104690118914467
+      },
+      "f1_weighted": {
+        "mean": 0.8220159297673586,
+        "std": 0.0032347840892543523
+      },
+      "seconds": 60.36283190001268
+    },
+    "drop_redundant_corr>0.9": {
+      "features": [
+        "load_percentage",
+        "ambient_temperature",
+        "supply_voltage",
+        "maintenance_quality",
+        "rpm",
+        "current",
+        "voltage",
+        "efficiency_index",
+        "motor_temperature",
+        "misalignment_index",
+        "vibration_rms",
+        "vibration_peak",
+        "crest_factor",
+        "sound_level_db",
+        "acoustic_anomaly_score",
+        "electrical_stress_index"
+      ],
+      "n": 16,
+      "accuracy": {
+        "mean": 0.8012624999999999,
+        "std": 0.0021273149155684673
+      },
+      "balanced_accuracy": {
+        "mean": 0.5756467982018427,
+        "std": 0.005836762093024119
+      },
+      "f1_macro": {
+        "mean": 0.5449286618346465,
+        "std": 0.0011131521361710623
+      },
+      "f1_weighted": {
+        "mean": 0.8078693310331926,
+        "std": 0.0028937645358345135
+      },
+      "seconds": 37.424225299968384
+    },
+    "top_12_permutation": {
+      "features": [
+        "electrical_stress_index",
+        "load_percentage",
+        "thermal_stress_index",
+        "current",
+        "motor_temperature",
+        "vibration_rms",
+        "power_factor",
+        "misalignment_index",
+        "spectral_energy",
+        "bearing_wear_index",
+        "kurtosis",
+        "bearing_temperature"
+      ],
+      "n": 12,
+      "accuracy": {
+        "mean": 0.8134,
+        "std": 0.0027579430741043204
+      },
+      "balanced_accuracy": {
+        "mean": 0.6208928371423565,
+        "std": 0.011279914255613333
+      },
+      "f1_macro": {
+        "mean": 0.5771254079359388,
+        "std": 0.008273682233402715
+      },
+      "f1_weighted": {
+        "mean": 0.8194200561150053,
+        "std": 0.003152541003470333
+      },
+      "seconds": 27.84956110001076
+    }
+  }
+}

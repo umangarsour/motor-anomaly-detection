@@ -1,0 +1,709 @@
+{
+  "features": [
+    "load_percentage",
+    "ambient_temperature",
+    "supply_voltage",
+    "maintenance_quality",
+    "rpm",
+    "current",
+    "voltage",
+    "active_power",
+    "power_factor",
+    "efficiency_index",
+    "motor_temperature",
+    "bearing_temperature",
+    "imbalance_index",
+    "misalignment_index",
+    "vibration_amplitude",
+    "vibration_rms",
+    "vibration_peak",
+    "crest_factor",
+    "kurtosis",
+    "sound_level_db",
+    "dominant_frequency",
+    "spectral_energy",
+    "acoustic_anomaly_score",
+    "bearing_wear_index",
+    "thermal_stress_index",
+    "electrical_stress_index",
+    "lubrication_index"
+  ],
+  "selection_metric": "f1_macro (GroupKFold(4) on cycle_id)",
+  "trials": [
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 10,
+        "min_samples_split": 10,
+        "max_features": 0.5,
+        "class_weight": "balanced_subsample",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8173625,
+        "std": 0.002983574827283517
+      },
+      "balanced_accuracy": {
+        "mean": 0.6048397181869547,
+        "std": 0.00786223997044146
+      },
+      "f1_macro": {
+        "mean": 0.5723522101040621,
+        "std": 0.006440902790491284
+      },
+      "f1_weighted": {
+        "mean": 0.8218879711335447,
+        "std": 0.0032633584724479896
+      },
+      "seconds": 59.13052410003729
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 10,
+        "min_samples_split": 20,
+        "max_features": 0.3,
+        "class_weight": "balanced_subsample",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.81735,
+        "std": 0.0031982417044369668
+      },
+      "balanced_accuracy": {
+        "mean": 0.6004353478495146,
+        "std": 0.009837633666429303
+      },
+      "f1_macro": {
+        "mean": 0.5721169156865004,
+        "std": 0.00919956569307805
+      },
+      "f1_weighted": {
+        "mean": 0.8214202418880056,
+        "std": 0.003467257470754312
+      },
+      "seconds": 37.41576139989775
+    },
+    {
+      "params": {
+        "max_depth": 28,
+        "min_samples_leaf": 10,
+        "min_samples_split": 20,
+        "max_features": 0.5,
+        "class_weight": "balanced",
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.8179749999999999,
+        "std": 0.002335727937924281
+      },
+      "balanced_accuracy": {
+        "mean": 0.5938011463610742,
+        "std": 0.008019385360197041
+      },
+      "f1_macro": {
+        "mean": 0.5684722419229076,
+        "std": 0.006531550698171504
+      },
+      "f1_weighted": {
+        "mean": 0.821651600451132,
+        "std": 0.00249155078621384
+      },
+      "seconds": 104.19478469993919
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 5,
+        "min_samples_split": 5,
+        "max_features": 0.3,
+        "class_weight": "balanced",
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.819525,
+        "std": 0.0014754236679679687
+      },
+      "balanced_accuracy": {
+        "mean": 0.5953998673084152,
+        "std": 0.007729972238872557
+      },
+      "f1_macro": {
+        "mean": 0.566694468909803,
+        "std": 0.005452703173980134
+      },
+      "f1_weighted": {
+        "mean": 0.8230640394498738,
+        "std": 0.0017468013451360353
+      },
+      "seconds": 61.42621029994916
+    },
+    {
+      "params": {
+        "max_depth": 20,
+        "min_samples_leaf": 2,
+        "min_samples_split": 5,
+        "max_features": "sqrt",
+        "class_weight": "balanced",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8206375,
+        "std": 0.00328849794739177
+      },
+      "balanced_accuracy": {
+        "mean": 0.580673083066148,
+        "std": 0.009215415725959712
+      },
+      "f1_macro": {
+        "mean": 0.5651611249746853,
+        "std": 0.00894895200744275
+      },
+      "f1_weighted": {
+        "mean": 0.8218826815681213,
+        "std": 0.0034476828428330556
+      },
+      "seconds": 90.20513200003188
+    },
+    {
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 1,
+        "min_samples_split": 10,
+        "max_features": 0.5,
+        "class_weight": "balanced_subsample",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8061624999999999,
+        "std": 0.0013753976697668106
+      },
+      "balanced_accuracy": {
+        "mean": 0.6232446221696047,
+        "std": 0.011149194387045912
+      },
+      "f1_macro": {
+        "mean": 0.5649319317332288,
+        "std": 0.004394976532641587
+      },
+      "f1_weighted": {
+        "mean": 0.8153935125294016,
+        "std": 0.0024366251863258757
+      },
+      "seconds": 51.695678999996744
+    },
+    {
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 10,
+        "min_samples_split": 20,
+        "max_features": "log2",
+        "class_weight": "balanced_subsample",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.80125,
+        "std": 0.0022989127865145277
+      },
+      "balanced_accuracy": {
+        "mean": 0.6232107527583235,
+        "std": 0.014248353250691494
+      },
+      "f1_macro": {
+        "mean": 0.5598760960081954,
+        "std": 0.006329412793824153
+      },
+      "f1_weighted": {
+        "mean": 0.8111294942969344,
+        "std": 0.0033101221628681335
+      },
+      "seconds": 17.14930289995391
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "max_features": "log2",
+        "class_weight": "balanced_subsample",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8234874999999999,
+        "std": 0.002606572222287368
+      },
+      "balanced_accuracy": {
+        "mean": 0.5678779053861102,
+        "std": 0.010542545628077438
+      },
+      "f1_macro": {
+        "mean": 0.5595185918361747,
+        "std": 0.009521796732578426
+      },
+      "f1_weighted": {
+        "mean": 0.8234222376119428,
+        "std": 0.0028459611814335042
+      },
+      "seconds": 20.878434999962337
+    },
+    {
+      "params": {
+        "max_depth": 20,
+        "min_samples_leaf": 1,
+        "min_samples_split": 5,
+        "max_features": "sqrt",
+        "class_weight": "balanced",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8216375,
+        "std": 0.003052944275613293
+      },
+      "balanced_accuracy": {
+        "mean": 0.5733460901886477,
+        "std": 0.009057761292659639
+      },
+      "f1_macro": {
+        "mean": 0.5591651102048432,
+        "std": 0.00727922833982288
+      },
+      "f1_weighted": {
+        "mean": 0.8222973614918532,
+        "std": 0.0031713045174505488
+      },
+      "seconds": 19.482105800067075
+    },
+    {
+      "params": {
+        "max_depth": 28,
+        "min_samples_leaf": 40,
+        "min_samples_split": 5,
+        "max_features": 0.3,
+        "class_weight": "balanced_subsample",
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.79025,
+        "std": 0.00248872457294897
+      },
+      "balanced_accuracy": {
+        "mean": 0.6691106801871294,
+        "std": 0.01689132294148312
+      },
+      "f1_macro": {
+        "mean": 0.5556733565906531,
+        "std": 0.004865977274089268
+      },
+      "f1_weighted": {
+        "mean": 0.8057633839373208,
+        "std": 0.00392723718410014
+      },
+      "seconds": 56.20065140002407
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 40,
+        "min_samples_split": 20,
+        "max_features": "sqrt",
+        "class_weight": "balanced",
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.788,
+        "std": 0.002560517525813844
+      },
+      "balanced_accuracy": {
+        "mean": 0.6690004524241224,
+        "std": 0.016920663863927383
+      },
+      "f1_macro": {
+        "mean": 0.5541715146426304,
+        "std": 0.005375006377409698
+      },
+      "f1_weighted": {
+        "mean": 0.8037645234553078,
+        "std": 0.00398623850260709
+      },
+      "seconds": 33.937793000019155
+    },
+    {
+      "params": {
+        "max_depth": 28,
+        "min_samples_leaf": 40,
+        "min_samples_split": 2,
+        "max_features": "sqrt",
+        "class_weight": "balanced",
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.7882624999999999,
+        "std": 0.002574241393109815
+      },
+      "balanced_accuracy": {
+        "mean": 0.6686347707794106,
+        "std": 0.009337541803503789
+      },
+      "f1_macro": {
+        "mean": 0.5541385937737054,
+        "std": 0.0028717318327343066
+      },
+      "f1_weighted": {
+        "mean": 0.803760959293063,
+        "std": 0.004068171429327887
+      },
+      "seconds": 35.12332420004532
+    },
+    {
+      "params": {
+        "max_depth": 20,
+        "min_samples_leaf": 40,
+        "min_samples_split": 10,
+        "max_features": "log2",
+        "class_weight": "balanced_subsample",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.7903249999999999,
+        "std": 0.0030303671394733512
+      },
+      "balanced_accuracy": {
+        "mean": 0.653390475230133,
+        "std": 0.010098849371897709
+      },
+      "f1_macro": {
+        "mean": 0.553588831704726,
+        "std": 0.0030962328187463047
+      },
+      "f1_weighted": {
+        "mean": 0.8044078012264179,
+        "std": 0.004338574040069808
+      },
+      "seconds": 16.73712480009999
+    },
+    {
+      "params": {
+        "max_depth": 28,
+        "min_samples_leaf": 20,
+        "min_samples_split": 20,
+        "max_features": 0.5,
+        "class_weight": "balanced",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.7879125,
+        "std": 0.0027090992506735804
+      },
+      "balanced_accuracy": {
+        "mean": 0.6738612563479405,
+        "std": 0.011000500011125118
+      },
+      "f1_macro": {
+        "mean": 0.5535568499812055,
+        "std": 0.004558915728697174
+      },
+      "f1_weighted": {
+        "mean": 0.8045121478944721,
+        "std": 0.003901678101115676
+      },
+      "seconds": 38.55441109999083
+    },
+    {
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 5,
+        "min_samples_split": 5,
+        "max_features": "log2",
+        "class_weight": "balanced_subsample",
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.8273875,
+        "std": 0.0024308884692638448
+      },
+      "balanced_accuracy": {
+        "mean": 0.5504988307756737,
+        "std": 0.00803590933209939
+      },
+      "f1_macro": {
+        "mean": 0.5530794547599713,
+        "std": 0.01107657326128122
+      },
+      "f1_weighted": {
+        "mean": 0.8246136199028192,
+        "std": 0.0027453445336635576
+      },
+      "seconds": 34.856437700102106
+    },
+    {
+      "params": {
+        "max_depth": 20,
+        "min_samples_leaf": 40,
+        "min_samples_split": 2,
+        "max_features": 0.5,
+        "class_weight": "balanced",
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.771425,
+        "std": 0.0031227992250543158
+      },
+      "balanced_accuracy": {
+        "mean": 0.6952906780396689,
+        "std": 0.005371525676617256
+      },
+      "f1_macro": {
+        "mean": 0.5393441935812774,
+        "std": 0.0037918835571189215
+      },
+      "f1_weighted": {
+        "mean": 0.7946375269832104,
+        "std": 0.0038945730327427375
+      },
+      "seconds": 53.61899670003913
+    },
+    {
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 20,
+        "max_features": 0.5,
+        "class_weight": null,
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.8326875,
+        "std": 0.0017924755925813963
+      },
+      "balanced_accuracy": {
+        "mean": 0.5108775694451452,
+        "std": 0.0020592200301868422
+      },
+      "f1_macro": {
+        "mean": 0.5168264121525534,
+        "std": 0.002275941697748471
+      },
+      "f1_weighted": {
+        "mean": 0.8247781097453666,
+        "std": 0.0013384269257719044
+      },
+      "seconds": 121.8616214999929
+    },
+    {
+      "params": {
+        "max_depth": 28,
+        "min_samples_leaf": 1,
+        "min_samples_split": 20,
+        "max_features": 0.5,
+        "class_weight": null,
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8337125000000001,
+        "std": 0.0022804536281187315
+      },
+      "balanced_accuracy": {
+        "mean": 0.5097107350624193,
+        "std": 0.0005980701134278652
+      },
+      "f1_macro": {
+        "mean": 0.5155866358615014,
+        "std": 0.0014901377230091457
+      },
+      "f1_weighted": {
+        "mean": 0.8251841787752685,
+        "std": 0.0020478415682912794
+      },
+      "seconds": 75.70198640006129
+    },
+    {
+      "params": {
+        "max_depth": 28,
+        "min_samples_leaf": 5,
+        "min_samples_split": 10,
+        "max_features": 0.5,
+        "class_weight": null,
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8346,
+        "std": 0.0020386883037874937
+      },
+      "balanced_accuracy": {
+        "mean": 0.5095343772692051,
+        "std": 0.0010700265914985502
+      },
+      "f1_macro": {
+        "mean": 0.5150778520801462,
+        "std": 0.0011929018636024158
+      },
+      "f1_weighted": {
+        "mean": 0.8258622981873629,
+        "std": 0.001931829297385613
+      },
+      "seconds": 66.39696180005558
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 2,
+        "min_samples_split": 5,
+        "max_features": 0.3,
+        "class_weight": null,
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.83375,
+        "std": 0.002345474365666777
+      },
+      "balanced_accuracy": {
+        "mean": 0.5090667687707808,
+        "std": 0.0015992707465165787
+      },
+      "f1_macro": {
+        "mean": 0.5144953480895791,
+        "std": 0.0019285028873512276
+      },
+      "f1_weighted": {
+        "mean": 0.82495862283777,
+        "std": 0.0024284053438789325
+      },
+      "seconds": 69.8363771000877
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 2,
+        "min_samples_split": 10,
+        "max_features": "sqrt",
+        "class_weight": null,
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.8332875000000001,
+        "std": 0.002495589860133285
+      },
+      "balanced_accuracy": {
+        "mean": 0.5034213554282434,
+        "std": 0.0025238583106263197
+      },
+      "f1_macro": {
+        "mean": 0.5070486805036079,
+        "std": 0.0036530694694619174
+      },
+      "f1_weighted": {
+        "mean": 0.822930447517931,
+        "std": 0.0024488485374462095
+      },
+      "seconds": 39.620885899988934
+    },
+    {
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "min_samples_split": 10,
+        "max_features": "log2",
+        "class_weight": null,
+        "bootstrap": false
+      },
+      "accuracy": {
+        "mean": 0.8311999999999999,
+        "std": 0.0023192132286618565
+      },
+      "balanced_accuracy": {
+        "mean": 0.4929292433423702,
+        "std": 0.0012473422280577778
+      },
+      "f1_macro": {
+        "mean": 0.4906255676440523,
+        "std": 0.00229249682734203
+      },
+      "f1_weighted": {
+        "mean": 0.817683789761276,
+        "std": 0.0020970213570031624
+      },
+      "seconds": 29.231224699993618
+    },
+    {
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 5,
+        "min_samples_split": 10,
+        "max_features": "log2",
+        "class_weight": null,
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8310624999999999,
+        "std": 0.0023087807929727854
+      },
+      "balanced_accuracy": {
+        "mean": 0.49165208501867486,
+        "std": 0.001088744985118143
+      },
+      "f1_macro": {
+        "mean": 0.488765069534674,
+        "std": 0.0022002260454539587
+      },
+      "f1_weighted": {
+        "mean": 0.8171908793936491,
+        "std": 0.0020582848875221175
+      },
+      "seconds": 17.17773070000112
+    },
+    {
+      "params": {
+        "max_depth": 20,
+        "min_samples_leaf": 20,
+        "min_samples_split": 10,
+        "max_features": "log2",
+        "class_weight": null,
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8305625000000001,
+        "std": 0.002339971954960151
+      },
+      "balanced_accuracy": {
+        "mean": 0.4900556711464204,
+        "std": 0.0012378106221283436
+      },
+      "f1_macro": {
+        "mean": 0.48559218590509723,
+        "std": 0.002595355939035436
+      },
+      "f1_weighted": {
+        "mean": 0.8160870753304027,
+        "std": 0.0022625006338720327
+      },
+      "seconds": 18.120626699994318
+    },
+    {
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 40,
+        "min_samples_split": 5,
+        "max_features": "sqrt",
+        "class_weight": null,
+        "bootstrap": true
+      },
+      "accuracy": {
+        "mean": 0.8305,
+        "std": 0.0021965882636488855
+      },
+      "balanced_accuracy": {
+        "mean": 0.48862641932459905,
+        "std": 0.0018657343661966567
+      },
+      "f1_macro": {
+        "mean": 0.4826633303868025,
+        "std": 0.0030730686951320908
+      },
+      "f1_weighted": {
+        "mean": 0.8154402781269533,
+        "std": 0.0023266887643154975
+      },
+      "seconds": 20.735299000050873
+    }
+  ]
+}

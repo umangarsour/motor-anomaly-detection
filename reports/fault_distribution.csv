@@ -1,0 +1,8 @@
+fault_type,count
+Overload,40118
+Electrical_Fault,24358
+Normal,22938
+Multi_Fault,8602
+Overheating,3505
+Misalignment,279
+Bearing_Wear,200

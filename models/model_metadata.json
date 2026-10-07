@@ -1,0 +1,840 @@
+{
+  "isolation_forest": {
+    "algorithm": "IsolationForest",
+    "params": {
+      "n_estimators": 300,
+      "contamination": 0.05,
+      "random_state": 42
+    },
+    "features": [
+      "load_percentage",
+      "ambient_temperature",
+      "supply_voltage",
+      "maintenance_quality",
+      "rpm",
+      "current",
+      "voltage",
+      "active_power",
+      "power_factor",
+      "efficiency_index",
+      "motor_temperature",
+      "bearing_temperature",
+      "imbalance_index",
+      "misalignment_index",
+      "vibration_amplitude",
+      "vibration_rms",
+      "vibration_peak",
+      "crest_factor",
+      "kurtosis",
+      "sound_level_db",
+      "dominant_frequency",
+      "spectral_energy",
+      "acoustic_anomaly_score",
+      "bearing_wear_index",
+      "thermal_stress_index",
+      "electrical_stress_index",
+      "lubrication_index"
+    ],
+    "fit_on": "training cycles only (80,000 rows), unscaled features",
+    "fit_time_s": 1.3997782999649644,
+    "risk_thresholds": {
+      "high": -0.03308876251667391,
+      "moderate": 0.0,
+      "watch": 0.03373039562006942
+    },
+    "anomaly_pct_train": 5.0,
+    "anomaly_pct_test": 3.695,
+    "decision_function_test": {
+      "count": 20000.0,
+      "mean": 0.0660063317682543,
+      "std": 0.02963891777155985,
+      "min": -0.08413200159923484,
+      "25%": 0.05080220592625316,
+      "50%": 0.07151117270916993,
+      "75%": 0.08698513982579813,
+      "max": 0.12648286577685086
+    },
+    "risk_bands_test": [
+      {
+        "risk_level": "Normal",
+        "share": 0.8672,
+        "mean_health": 70.4919412553751,
+        "critical_share": 0.05362084870848709
+      },
+      {
+        "risk_level": "Slightly Abnormal",
+        "share": 0.09585,
+        "mean_health": 32.57951288197408,
+        "critical_share": 0.5440792905581638
+      },
+      {
+        "risk_level": "Moderate Risk",
+        "share": 0.02985,
+        "mean_health": 12.932172745040722,
+        "critical_share": 0.8894472361809045
+      },
+      {
+        "risk_level": "High Risk",
+        "share": 0.0071,
+        "mean_health": 7.799588498445094,
+        "critical_share": 0.9577464788732394
+      }
+    ],
+    "proxy_eval_test": {
+      "fault_type != Normal": {
+        "proxy_positive_rate": 0.7693,
+        "precision": 0.9837618403247632,
+        "recall": 0.047250747432731055,
+        "f1": 0.09017054263565892,
+        "roc_auc": 0.579896785232112,
+        "pr_auc": 0.8355397010673096
+      },
+      "severity in {High, Critical} (health < 50)": {
+        "proxy_positive_rate": 0.30675,
+        "precision": 0.979702300405954,
+        "recall": 0.11801140994295028,
+        "f1": 0.210648821646785,
+        "roc_auc": 0.8498542147750855,
+        "pr_auc": 0.7489977547866999
+      },
+      "severity == Critical (health < 25)": {
+        "proxy_positive_rate": 0.132,
+        "precision": 0.9025710419485792,
+        "recall": 0.2526515151515151,
+        "f1": 0.39479135839005625,
+        "roc_auc": 0.927313813538612,
+        "pr_auc": 0.7090234653835273
+      }
+    }
+  },
+  "classifier": {
+    "algorithm": "RandomForestClassifier",
+    "params": {
+      "n_estimators": 200,
+      "max_depth": 16,
+      "min_samples_leaf": 10,
+      "min_samples_split": 10,
+      "max_features": 0.5,
+      "class_weight": "balanced_subsample",
+      "bootstrap": true,
+      "oob_score": true,
+      "random_state": 42
+    },
+    "calibration": null,
+    "probability_label": "Model Confidence",
+    "features": [
+      "load_percentage",
+      "ambient_temperature",
+      "supply_voltage",
+      "maintenance_quality",
+      "rpm",
+      "current",
+      "voltage",
+      "active_power",
+      "power_factor",
+      "efficiency_index",
+      "motor_temperature",
+      "bearing_temperature",
+      "imbalance_index",
+      "misalignment_index",
+      "vibration_amplitude",
+      "vibration_rms",
+      "vibration_peak",
+      "crest_factor",
+      "kurtosis",
+      "sound_level_db",
+      "dominant_frequency",
+      "spectral_energy",
+      "acoustic_anomaly_score",
+      "bearing_wear_index",
+      "thermal_stress_index",
+      "electrical_stress_index",
+      "lubrication_index"
+    ],
+    "classes": [
+      "Bearing_Wear",
+      "Electrical_Fault",
+      "Misalignment",
+      "Multi_Fault",
+      "Normal",
+      "Overheating",
+      "Overload"
+    ],
+    "split": "train = cycles 1-4 of every motor (80,000 rows); test = cycle 5 (20,000 rows); CV = GroupKFold(4) on cycle_id",
+    "train_size": 80000,
+    "test_size": 20000,
+    "class_distribution_train": {
+      "Overload": 31992,
+      "Electrical_Fault": 19407,
+      "Normal": 18324,
+      "Multi_Fault": 7085,
+      "Overheating": 2818,
+      "Misalignment": 218,
+      "Bearing_Wear": 156
+    },
+    "test_metrics": {
+      "accuracy": 0.8087,
+      "balanced_accuracy": 0.6042390251108893,
+      "precision_macro": 0.549326586374536,
+      "recall_macro": 0.6042390251108893,
+      "f1_macro": 0.5699447699367942,
+      "f1_weighted": 0.8154167593407691,
+      "per_class": {
+        "Bearing_Wear": {
+          "precision": 0.14285714285714285,
+          "recall": 0.18181818181818182,
+          "f1": 0.16,
+          "support": 44
+        },
+        "Electrical_Fault": {
+          "precision": 0.7866967768425375,
+          "recall": 0.7739850535245405,
+          "f1": 0.7802891468132763,
+          "support": 4951
+        },
+        "Misalignment": {
+          "precision": 0.13761467889908258,
+          "recall": 0.2459016393442623,
+          "f1": 0.17647058823529413,
+          "support": 61
+        },
+        "Multi_Fault": {
+          "precision": 0.7073972602739727,
+          "recall": 0.8510217534607778,
+          "f1": 0.772591262716936,
+          "support": 1517
+        },
+        "Normal": {
+          "precision": 0.8692357653171682,
+          "recall": 0.8701777199826615,
+          "f1": 0.8697064875988303,
+          "support": 4614
+        },
+        "Overheating": {
+          "precision": 0.3,
+          "recall": 0.4847161572052402,
+          "f1": 0.37061769616026713,
+          "support": 687
+        },
+        "Overload": {
+          "precision": 0.9014844804318488,
+          "recall": 0.8220526704405612,
+          "f1": 0.8599382080329557,
+          "support": 8126
+        }
+      },
+      "confusion_matrix": [
+        [
+          8,
+          27,
+          1,
+          2,
+          0,
+          4,
+          2
+        ],
+        [
+          29,
+          3832,
+          50,
+          398,
+          46,
+          374,
+          222
+        ],
+        [
+          0,
+          24,
+          15,
+          0,
+          4,
+          13,
+          5
+        ],
+        [
+          7,
+          97,
+          0,
+          1291,
+          0,
+          78,
+          44
+        ],
+        [
+          0,
+          112,
+          12,
+          0,
+          4015,
+          63,
+          412
+        ],
+        [
+          4,
+          248,
+          9,
+          40,
+          8,
+          333,
+          45
+        ],
+        [
+          8,
+          531,
+          22,
+          94,
+          546,
+          245,
+          6680
+        ]
+      ]
+    },
+    "cv_metrics": {
+      "accuracy": {
+        "mean": 0.8173625,
+        "std": 0.002983574827283517
+      },
+      "balanced_accuracy": {
+        "mean": 0.6048397181869547,
+        "std": 0.00786223997044146
+      },
+      "f1_macro": {
+        "mean": 0.5723522101040621,
+        "std": 0.006440902790491284
+      },
+      "f1_weighted": {
+        "mean": 0.8218879711335447,
+        "std": 0.0032633584724479896
+      }
+    },
+    "cv_oof_per_class": {
+      "Bearing_Wear": {
+        "precision": 0.1,
+        "recall": 0.09615384615384616,
+        "f1": 0.09803921568627451,
+        "support": 156
+      },
+      "Electrical_Fault": {
+        "precision": 0.7962637713555804,
+        "recall": 0.7709074045447519,
+        "f1": 0.7833804586867735,
+        "support": 19407
+      },
+      "Misalignment": {
+        "precision": 0.14805825242718446,
+        "recall": 0.2798165137614679,
+        "f1": 0.19365079365079366,
+        "support": 218
+      },
+      "Multi_Fault": {
+        "precision": 0.7133454380390377,
+        "recall": 0.887226534932957,
+        "f1": 0.7908410391897842,
+        "support": 7085
+      },
+      "Normal": {
+        "precision": 0.869193088227378,
+        "recall": 0.8811940624317834,
+        "f1": 0.8751524348933634,
+        "support": 18324
+      },
+      "Overheating": {
+        "precision": 0.35137844611528823,
+        "recall": 0.49751596877217885,
+        "f1": 0.4118683901292597,
+        "support": 2818
+      },
+      "Overload": {
+        "precision": 0.9059446532285617,
+        "recall": 0.8288634658664666,
+        "f1": 0.8656916196010578,
+        "support": 31992
+      }
+    },
+    "oob_score": 0.8151625,
+    "training_time_s": 23.712565599940717,
+    "inference_ms_per_row_batch": 0.005767955002374947,
+    "inference_ms_single_row_median": 29.33420002227649,
+    "model_size_mb": 34.199535,
+    "reliability_test": [
+      {
+        "bin": "0.2-0.3",
+        "n": 79,
+        "mean_confidence": 0.2783111255391325,
+        "accuracy": 0.20253164556962025
+      },
+      {
+        "bin": "0.3-0.4",
+        "n": 773,
+        "mean_confidence": 0.36111758592438686,
+        "accuracy": 0.38033635187580855
+      },
+      {
+        "bin": "0.4-0.5",
+        "n": 1601,
+        "mean_confidence": 0.45374086973331573,
+        "accuracy": 0.4834478450968145
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 2381,
+        "mean_confidence": 0.5487452692548437,
+        "accuracy": 0.5976480470390593
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 2195,
+        "mean_confidence": 0.6502884975420807,
+        "accuracy": 0.7134396355353075
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 2271,
+        "mean_confidence": 0.7508537097339801,
+        "accuracy": 0.8150594451783355
+      },
+      {
+        "bin": "0.8-0.9",
+        "n": 2641,
+        "mean_confidence": 0.8523435752241205,
+        "accuracy": 0.8939795531995456
+      },
+      {
+        "bin": "0.9-1.0",
+        "n": 8059,
+        "mean_confidence": 0.9751679763642606,
+        "accuracy": 0.978905571410845
+      }
+    ],
+    "ece_test": 0.03046754679310024,
+    "feature_importance": [
+      {
+        "Feature": "electrical_stress_index",
+        "Importance": 0.15511040807295176,
+        "Permutation_F1_Macro": 0.10819716351893774,
+        "Permutation_Std": 0.005096361939896598
+      },
+      {
+        "Feature": "load_percentage",
+        "Importance": 0.07268788769633885,
+        "Permutation_F1_Macro": 0.058641297380391255,
+        "Permutation_Std": 0.005590646533520585
+      },
+      {
+        "Feature": "thermal_stress_index",
+        "Importance": 0.12213374986840665,
+        "Permutation_F1_Macro": 0.056435882660369516,
+        "Permutation_Std": 0.0046360096073520774
+      },
+      {
+        "Feature": "current",
+        "Importance": 0.07626398932754298,
+        "Permutation_F1_Macro": 0.02648355262222497,
+        "Permutation_Std": 0.0016303537463572754
+      },
+      {
+        "Feature": "vibration_rms",
+        "Importance": 0.03964618338628778,
+        "Permutation_F1_Macro": 0.025847268974825522,
+        "Permutation_Std": 0.0020980663715443075
+      },
+      {
+        "Feature": "power_factor",
+        "Importance": 0.039578452637693204,
+        "Permutation_F1_Macro": 0.018236988512922346,
+        "Permutation_Std": 0.0018934493496580906
+      },
+      {
+        "Feature": "motor_temperature",
+        "Importance": 0.049839236503963935,
+        "Permutation_F1_Macro": 0.014621389064866697,
+        "Permutation_Std": 0.0020249213222510937
+      },
+      {
+        "Feature": "bearing_wear_index",
+        "Importance": 0.08162060996795188,
+        "Permutation_F1_Macro": 0.013292390200171634,
+        "Permutation_Std": 0.003194248855657
+      },
+      {
+        "Feature": "misalignment_index",
+        "Importance": 0.037974502139428705,
+        "Permutation_F1_Macro": 0.01110925405588914,
+        "Permutation_Std": 0.0030591348809483675
+      },
+      {
+        "Feature": "vibration_amplitude",
+        "Importance": 0.030692869260426775,
+        "Permutation_F1_Macro": 0.0037256965427000742,
+        "Permutation_Std": 0.002231334695082166
+      },
+      {
+        "Feature": "active_power",
+        "Importance": 0.03879631520099537,
+        "Permutation_F1_Macro": 0.002769493535859002,
+        "Permutation_Std": 0.0014243142036423982
+      },
+      {
+        "Feature": "vibration_peak",
+        "Importance": 0.008287919534426013,
+        "Permutation_F1_Macro": 0.002294079438054264,
+        "Permutation_Std": 0.004341287290574129
+      },
+      {
+        "Feature": "rpm",
+        "Importance": 0.010278221848245402,
+        "Permutation_F1_Macro": 0.001887301560315513,
+        "Permutation_Std": 0.004439191199020119
+      },
+      {
+        "Feature": "bearing_temperature",
+        "Importance": 0.045097131219013264,
+        "Permutation_F1_Macro": 0.0016877516219193423,
+        "Permutation_Std": 0.0010336546598278854
+      },
+      {
+        "Feature": "supply_voltage",
+        "Importance": 0.008852182177518339,
+        "Permutation_F1_Macro": 0.0005960086935201004,
+        "Permutation_Std": 0.0017915397013493065
+      },
+      {
+        "Feature": "ambient_temperature",
+        "Importance": 0.013380156913953,
+        "Permutation_F1_Macro": -0.0003422374341365275,
+        "Permutation_Std": 0.001895354828259274
+      },
+      {
+        "Feature": "voltage",
+        "Importance": 0.009258938670470325,
+        "Permutation_F1_Macro": -0.0006457728315072853,
+        "Permutation_Std": 0.001386931313221248
+      },
+      {
+        "Feature": "dominant_frequency",
+        "Importance": 0.013343885298585453,
+        "Permutation_F1_Macro": -0.0012005777178301313,
+        "Permutation_Std": 0.001130796867894417
+      },
+      {
+        "Feature": "acoustic_anomaly_score",
+        "Importance": 0.009082448587200776,
+        "Permutation_F1_Macro": -0.001761971015023156,
+        "Permutation_Std": 0.0013516698007010686
+      },
+      {
+        "Feature": "efficiency_index",
+        "Importance": 0.009972411826653442,
+        "Permutation_F1_Macro": -0.0021351689035566277,
+        "Permutation_Std": 0.000626058733739176
+      },
+      {
+        "Feature": "imbalance_index",
+        "Importance": 0.009855942136656855,
+        "Permutation_F1_Macro": -0.0022459747368557713,
+        "Permutation_Std": 0.0009084414400404063
+      },
+      {
+        "Feature": "crest_factor",
+        "Importance": 0.01133668152363551,
+        "Permutation_F1_Macro": -0.0026275681920028713,
+        "Permutation_Std": 0.001922891365840462
+      },
+      {
+        "Feature": "lubrication_index",
+        "Importance": 0.0516115146524916,
+        "Permutation_F1_Macro": -0.00326123379592731,
+        "Permutation_Std": 0.002047597632294578
+      },
+      {
+        "Feature": "sound_level_db",
+        "Importance": 0.009658587189808882,
+        "Permutation_F1_Macro": -0.003518471031188186,
+        "Permutation_Std": 0.0012414740643485358
+      },
+      {
+        "Feature": "kurtosis",
+        "Importance": 0.013964986572271023,
+        "Permutation_F1_Macro": -0.0044543403452022455,
+        "Permutation_Std": 0.0007564060328038931
+      },
+      {
+        "Feature": "maintenance_quality",
+        "Importance": 0.014603138405552265,
+        "Permutation_F1_Macro": -0.005902575352114736,
+        "Permutation_Std": 0.002455671127301201
+      },
+      {
+        "Feature": "spectral_energy",
+        "Importance": 0.01707164938153005,
+        "Permutation_F1_Macro": -0.005916607609814583,
+        "Permutation_Std": 0.0009592614215729311
+      }
+    ],
+    "sklearn_version": "1.9.0",
+    "trained_at": "2026-10-07T02:25:24",
+    "theoretical_ceiling": {
+      "expected_bayes_accuracy": 0.839805975,
+      "bayes_rule_test": {
+        "accuracy": 0.8369,
+        "balanced_accuracy": 0.5248282375704001,
+        "f1_macro": 0.5379242071573695,
+        "f1_weighted": 0.830396002400848
+      }
+    }
+  },
+  "reference": {
+    "load_percentage": {
+      "q01": 32.76339024175699,
+      "q05": 37.42206592534029,
+      "q50": 61.569453492701626,
+      "q95": 87.47136696681406,
+      "q99": 95.47516037669075,
+      "min": 21.497142479337484,
+      "max": 111.78278574526746
+    },
+    "ambient_temperature": {
+      "q01": 22.756870568490015,
+      "q05": 24.12467083161829,
+      "q50": 29.978200602380873,
+      "q95": 35.8897082545183,
+      "q99": 37.24088647089482,
+      "min": 18.61433526362019,
+      "max": 41.54695403727634
+    },
+    "supply_voltage": {
+      "q01": 409.1615634756151,
+      "q05": 410.89398720661603,
+      "q50": 414.98925126619304,
+      "q95": 419.1239038700716,
+      "q99": 420.8245952162719,
+      "min": 403.3889530642113,
+      "max": 426.4052868090373
+    },
+    "maintenance_quality": {
+      "q01": 0.8322212765608935,
+      "q05": 0.8801943976879276,
+      "q50": 0.9880635075664392,
+      "q95": 1.0770712064230323,
+      "q99": 1.1129295894385645,
+      "min": 0.7,
+      "max": 1.2
+    },
+    "rpm": {
+      "q01": 1416.4947790387807,
+      "q05": 1427.8349950612067,
+      "q50": 1456.6440321993102,
+      "q95": 1605.5074978566586,
+      "q99": 1626.2977167779381,
+      "min": 1386.7454214314082,
+      "max": 1662.7886072704362
+    },
+    "current": {
+      "q01": 3.7258630422421812,
+      "q05": 4.528542755990861,
+      "q50": 8.096387503404118,
+      "q95": 11.649159743838348,
+      "q99": 12.937148578537542,
+      "min": 1.9181011307288007,
+      "max": 16.1499949878982
+    },
+    "voltage": {
+      "q01": 401.59604718985054,
+      "q05": 405.1202308537648,
+      "q50": 413.245524503115,
+      "q95": 421.3734462764434,
+      "q99": 424.73110673442676,
+      "min": 392.3044191153429,
+      "max": 433.0422606844892
+    },
+    "active_power": {
+      "q01": 1.338811780363115,
+      "q05": 1.6214129059354743,
+      "q50": 2.654396570169015,
+      "q95": 3.550963767437713,
+      "q99": 3.8708186574257955,
+      "min": 0.6818596268963288,
+      "max": 4.719816488110741
+    },
+    "power_factor": {
+      "q01": 0.6583535277727464,
+      "q05": 0.6832561437335597,
+      "q50": 0.8131217228811611,
+      "q95": 0.8861360665016665,
+      "q99": 0.9064781590536816,
+      "min": 0.65,
+      "max": 0.95
+    },
+    "efficiency_index": {
+      "q01": 0.6791202114144942,
+      "q05": 0.710048411869476,
+      "q50": 0.8053654781994275,
+      "q95": 0.8844428338950143,
+      "q99": 0.912047807399034,
+      "min": 0.6095568868934219,
+      "max": 0.92
+    },
+    "motor_temperature": {
+      "q01": 61.23495632028173,
+      "q05": 64.29911361503801,
+      "q50": 73.71144652001942,
+      "q95": 84.37277299121489,
+      "q99": 88.35920526854993,
+      "min": 51.2355960284332,
+      "max": 97.28650230404396
+    },
+    "bearing_temperature": {
+      "q01": 53.028190108068834,
+      "q05": 56.05679782404644,
+      "q50": 67.057041584762,
+      "q95": 92.365835451238,
+      "q99": 98.19157530849898,
+      "min": 46.361809295016506,
+      "max": 110.33841865687997
+    },
+    "imbalance_index": {
+      "q01": 2.19296049385732,
+      "q05": 5.040270859639045,
+      "q50": 16.03815216364861,
+      "q95": 33.22045320215661,
+      "q99": 37.2981267143175,
+      "min": -7.374833795570385,
+      "max": 45.92006097372533
+    },
+    "misalignment_index": {
+      "q01": 14.220677610768066,
+      "q05": 20.012716593837485,
+      "q50": 42.45059226222139,
+      "q95": 65.10465648480258,
+      "q99": 71.09770172348689,
+      "min": 0.600324795226026,
+      "max": 86.84221565002576
+    },
+    "vibration_amplitude": {
+      "q01": 1.6872926249347922,
+      "q05": 1.8807965557681907,
+      "q50": 2.774384837908787,
+      "q95": 4.312872026876939,
+      "q99": 4.594799200830179,
+      "min": 1.2935096850384902,
+      "max": 5.239450949986083
+    },
+    "vibration_rms": {
+      "q01": 1.3020766204494918,
+      "q05": 1.5530708560618447,
+      "q50": 2.5005584430899948,
+      "q95": 4.102457728275174,
+      "q99": 4.65364245495315,
+      "min": 0.5865259089214914,
+      "max": 6.453640414578008
+    },
+    "vibration_peak": {
+      "q01": 1.9093089674060066,
+      "q05": 2.3662348985240875,
+      "q50": 4.004698356171188,
+      "q95": 6.815257234290342,
+      "q99": 7.888832606592331,
+      "min": 0.8557639435461895,
+      "max": 10.861067738410735
+    },
+    "crest_factor": {
+      "q01": 0.738814639060829,
+      "q05": 0.9770219068644724,
+      "q50": 1.616902236455653,
+      "q95": 2.393036085731475,
+      "q99": 2.7876341889862317,
+      "min": 0.0953128934365141,
+      "max": 4.354962280702861
+    },
+    "kurtosis": {
+      "q01": 2.9894888697536937,
+      "q05": 3.2891752872176996,
+      "q50": 4.585820114406668,
+      "q95": 7.002793430466143,
+      "q99": 7.487927789867222,
+      "min": 2.2240886364577084,
+      "max": 8.283441988984485
+    },
+    "sound_level_db": {
+      "q01": 52.84183979100911,
+      "q05": 55.389022116509636,
+      "q50": 62.496731003650495,
+      "q95": 71.30048550847775,
+      "q99": 74.25037972319153,
+      "min": 45.72303356227062,
+      "max": 81.26238263912532
+    },
+    "dominant_frequency": {
+      "q01": 59.68156982798806,
+      "q05": 62.54001607147786,
+      "q50": 75.3569412492929,
+      "q95": 99.28160174206438,
+      "q99": 104.24154902162385,
+      "min": 49.8880551403042,
+      "max": 113.26276890052615
+    },
+    "spectral_energy": {
+      "q01": 75.33673081780967,
+      "q05": 94.85200755247172,
+      "q50": 186.34475615490132,
+      "q95": 408.83596539946484,
+      "q99": 500.79744046265546,
+      "min": 33.65797257596829,
+      "max": 782.4344703716362
+    },
+    "acoustic_anomaly_score": {
+      "q01": -3.644064840578795,
+      "q05": 0.6074551511419694,
+      "q50": 12.720628947223414,
+      "q95": 28.03592414359588,
+      "q99": 33.31371211004151,
+      "min": -15.841929387058212,
+      "max": 47.124443657339214
+    },
+    "bearing_wear_index": {
+      "q01": 0.0,
+      "q05": 0.0,
+      "q50": 22.76622715837849,
+      "q95": 89.44406458059737,
+      "q99": 100.0,
+      "min": 0.0,
+      "max": 100.0
+    },
+    "thermal_stress_index": {
+      "q01": 0.0,
+      "q05": 0.0,
+      "q50": 32.47564276225342,
+      "q95": 100.0,
+      "q99": 100.0,
+      "min": 0.0,
+      "max": 100.0
+    },
+    "electrical_stress_index": {
+      "q01": 0.0,
+      "q05": 0.0,
+      "q50": 26.24953835944031,
+      "q95": 97.62128946020128,
+      "q99": 100.0,
+      "min": 0.0,
+      "max": 100.0
+    },
+    "lubrication_index": {
+      "q01": 0.0,
+      "q05": 3.221728657500761,
+      "q50": 74.02141343814806,
+      "q95": 100.0,
+      "q99": 100.0,
+      "min": 0.0,
+      "max": 100.0
+    },
+    "health_score": {
+      "q01": 1.773420893975835,
+      "q05": 9.612932134795308,
+      "q50": 71.35511210681165,
+      "q95": 98.70897443611139,
+      "q99": 100.0,
+      "min": 0.0,
+      "max": 100.0
+    }
+  }
+}

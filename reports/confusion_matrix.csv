@@ -1,0 +1,8 @@
+,Bearing_Wear,Electrical_Fault,Misalignment,Multi_Fault,Normal,Overheating,Overload
+Bearing_Wear,8,27,1,2,0,4,2
+Electrical_Fault,29,3832,50,398,46,374,222
+Misalignment,0,24,15,0,4,13,5
+Multi_Fault,7,97,0,1291,0,78,44
+Normal,0,112,12,0,4015,63,412
+Overheating,4,248,9,40,8,333,45
+Overload,8,531,22,94,546,245,6680

@@ -1,0 +1,304 @@
+{
+  "dataset": {
+    "samples": 100000,
+    "n_features": 28,
+    "features": [
+      "load_percentage",
+      "ambient_temperature",
+      "supply_voltage",
+      "maintenance_quality",
+      "rpm",
+      "current",
+      "voltage",
+      "active_power",
+      "power_factor",
+      "efficiency_index",
+      "motor_temperature",
+      "bearing_temperature",
+      "imbalance_index",
+      "misalignment_index",
+      "vibration_amplitude",
+      "vibration_rms",
+      "vibration_peak",
+      "crest_factor",
+      "kurtosis",
+      "sound_level_db",
+      "dominant_frequency",
+      "spectral_energy",
+      "acoustic_anomaly_score",
+      "bearing_wear_index",
+      "thermal_stress_index",
+      "electrical_stress_index",
+      "lubrication_index",
+      "health_score"
+    ],
+    "class_distribution": {
+      "Overload": 40118,
+      "Electrical_Fault": 24358,
+      "Normal": 22938,
+      "Multi_Fault": 8602,
+      "Overheating": 3505,
+      "Misalignment": 279,
+      "Bearing_Wear": 200
+    },
+    "severity_distribution": {
+      "Low": 45986,
+      "Medium": 23049,
+      "High": 17287,
+      "Critical": 13678
+    },
+    "train_size": 80000,
+    "validation_size": 0,
+    "test_size": 20000,
+    "split": "row-level stratified train_test_split(test_size=0.2, random_state=42); no separate validation set (5-fold CV on train only)"
+  },
+  "random_forest": {
+    "accuracy": 0.8279,
+    "balanced_accuracy": 0.5392936278644391,
+    "precision_macro": 0.5677407271777031,
+    "recall_macro": 0.5392936278644391,
+    "f1_macro": 0.544693632715904,
+    "f1_weighted": 0.8229600989453258,
+    "per_class": {
+      "Bearing_Wear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 40
+      },
+      "Electrical_Fault": {
+        "precision": 0.7525600446844163,
+        "recall": 0.8296387520525451,
+        "f1": 0.7892219076442448,
+        "support": 4872
+      },
+      "Misalignment": {
+        "precision": 0.21621621621621623,
+        "recall": 0.14285714285714285,
+        "f1": 0.17204301075268819,
+        "support": 56
+      },
+      "Multi_Fault": {
+        "precision": 0.7556701030927835,
+        "recall": 0.8523255813953489,
+        "f1": 0.8010928961748633,
+        "support": 1720
+      },
+      "Normal": {
+        "precision": 0.8824437582708425,
+        "recall": 0.8722476564203183,
+        "f1": 0.8773160837627453,
+        "support": 4587
+      },
+      "Overheating": {
+        "precision": 0.4827586206896552,
+        "recall": 0.21968616262482168,
+        "f1": 0.30196078431372547,
+        "support": 701
+      },
+      "Overload": {
+        "precision": 0.8845363472900077,
+        "recall": 0.8583000997008973,
+        "f1": 0.8712207463630613,
+        "support": 8024
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        33,
+        1,
+        3,
+        0,
+        0,
+        3
+      ],
+      [
+        6,
+        4042,
+        11,
+        355,
+        61,
+        82,
+        315
+      ],
+      [
+        0,
+        40,
+        8,
+        0,
+        2,
+        2,
+        4
+      ],
+      [
+        4,
+        149,
+        0,
+        1466,
+        0,
+        29,
+        72
+      ],
+      [
+        0,
+        144,
+        3,
+        0,
+        4001,
+        9,
+        430
+      ],
+      [
+        2,
+        400,
+        4,
+        46,
+        20,
+        154,
+        75
+      ],
+      [
+        1,
+        563,
+        10,
+        70,
+        450,
+        43,
+        6887
+      ]
+    ],
+    "oob_score": 0.8308375,
+    "params": {
+      "class_weight": "balanced",
+      "max_depth": 20,
+      "max_features": "sqrt",
+      "min_samples_leaf": 2,
+      "min_samples_split": 5,
+      "n_estimators": 500,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "model_file_mb": 677.643606,
+    "total_tree_nodes": 5607844,
+    "load_time_s": 2.228946499992162,
+    "inference_batch_test_s": 1.0587367999833077,
+    "inference_per_row_ms_batch": 0.05293683999916539,
+    "inference_single_row_ms_median": 133.84855003096163,
+    "cv_5fold_rowlevel": {
+      "accuracy": {
+        "mean": 0.8218375,
+        "std": 0.0014310179942963613
+      },
+      "balanced_accuracy": {
+        "mean": 0.5756430183254932,
+        "std": 0.0064874529386071324
+      },
+      "f1_macro": {
+        "mean": 0.560987629699052,
+        "std": 0.004397402470681425
+      },
+      "f1_weighted": {
+        "mean": 0.8230994220377316,
+        "std": 0.0013114864114127467
+      }
+    },
+    "training_time_s_current_env": 75.82493329991121,
+    "refit_test_prediction_agreement": 0.942
+  },
+  "isolation_forest": {
+    "params": {
+      "n_estimators": 300,
+      "contamination": 0.05,
+      "max_samples": "auto",
+      "max_features": 1.0,
+      "random_state": 42
+    },
+    "fit_on": "all 100,000 rows (no hold-out), StandardScaler fit on all rows",
+    "n_anomalies": 5000,
+    "anomaly_pct": 5.0,
+    "decision_function": {
+      "count": 100000.0,
+      "mean": 0.06357989730042164,
+      "std": 0.03150494153371703,
+      "min": -0.1332289644233987,
+      "1%": -0.03464514080408695,
+      "5%": 1.4201910259037235e-17,
+      "25%": 0.048220097951116425,
+      "50%": 0.06935469792865642,
+      "75%": 0.08591760392145685,
+      "95%": 0.1037611619084663,
+      "max": 0.12937913102441378
+    },
+    "score_samples": {
+      "count": 100000.0,
+      "mean": -0.4609036830037098,
+      "std": 0.03150494153371703,
+      "min": -0.6577125447275302,
+      "25%": -0.476263482353015,
+      "50%": -0.455128882375475,
+      "75%": -0.4385659763826746,
+      "max": -0.39510444927971766
+    },
+    "risk_level_share_pct": {
+      "Normal (>0.05)": 73.425,
+      "Slightly Abnormal (0..0.05]": 21.575,
+      "Moderate Risk (-0.05..0]": 4.596,
+      "High Risk (<=-0.05)": 0.404
+    },
+    "ground_truth_anomaly_labels": "none in dataset - proxy targets only",
+    "proxy_eval_all_rows": {
+      "fault_type != Normal": {
+        "proxy_positive_rate": 0.77062,
+        "precision": 0.9798,
+        "recall": 0.06357218862733903,
+        "f1": 0.11939752869781385,
+        "roc_auc": 0.554821908800724,
+        "pr_auc": 0.8265979631702018
+      },
+      "severity in {High, Critical} (health < 50)": {
+        "proxy_positive_rate": 0.30965,
+        "precision": 0.9768,
+        "recall": 0.15772646536412077,
+        "f1": 0.2715973863478382,
+        "roc_auc": 0.8534553123179712,
+        "pr_auc": 0.7563379681360288
+      },
+      "severity == Critical (health < 25)": {
+        "proxy_positive_rate": 0.13678,
+        "precision": 0.9174,
+        "recall": 0.3353560462055856,
+        "f1": 0.4911660777385159,
+        "roc_auc": 0.9437175380492939,
+        "pr_auc": 0.7704559740580004
+      }
+    },
+    "proxy_eval_test_rows": {
+      "fault_type != Normal": {
+        "proxy_positive_rate": 0.77065,
+        "precision": 0.9831349206349206,
+        "recall": 0.06429637319146175,
+        "f1": 0.1206991048048231,
+        "roc_auc": 0.5536355448178925,
+        "pr_auc": 0.8268122251089963
+      },
+      "severity in {High, Critical} (health < 50)": {
+        "proxy_positive_rate": 0.3094,
+        "precision": 0.9801587301587301,
+        "recall": 0.15966386554621848,
+        "f1": 0.2745969983324069,
+        "roc_auc": 0.856024423737282,
+        "pr_auc": 0.7599369807047983
+      },
+      "severity == Critical (health < 25)": {
+        "proxy_positive_rate": 0.13905,
+        "precision": 0.9186507936507936,
+        "recall": 0.3329737504494786,
+        "f1": 0.48878332013723935,
+        "roc_auc": 0.94298405011114,
+        "pr_auc": 0.7701945997641081
+      }
+    },
+    "model_file_mb": 4.018121
+  }
+}

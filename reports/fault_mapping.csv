@@ -1,0 +1,8 @@
+Encoded Label,Fault Type
+0,Bearing_Wear
+1,Electrical_Fault
+2,Misalignment
+3,Multi_Fault
+4,Normal
+5,Overheating
+6,Overload
